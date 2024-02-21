@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_svg: ^2.0.9
   google_fonts: ^6.1.0
+  flutter_swipe_button: ^2.1.1+1
 
 dev_dependencies:
   flutter_test:

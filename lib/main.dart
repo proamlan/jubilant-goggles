@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:jubilant/home/home_screen.dart';
 import 'package:jubilant/home/utils/colors.dart';
 
+import 'checkout/swipe_to_pay.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -45,8 +47,7 @@ class TapInvestApp extends StatelessWidget {
             labelSmall: TextStyle(fontSize: 10, color: kSecondaryTextColor)),
         useMaterial3: true,
       ),
-      // home: const CompanyInfo(),
-      home: HomeScreen(),
+      home: SwipeToPay(),
     );
   }
 }
