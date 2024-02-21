@@ -1,4 +1,4 @@
-name: untitled
+name: jubilant
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -29,3 +29,16 @@ flutter:
   assets:
     - images/
 
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: font/Inter-Regular.ttf
+        - asset: font/Inter-Black.ttf
+        - asset: font/Inter-Bold.ttf
+        - asset: font/Inter-ExtraBold.ttf
+        - asset: font/Inter-ExtraLight.ttf
+        - asset: font/Inter-Light.ttf
+        - asset: font/Inter-Medium.ttf
+        - asset: font/Inter-Regular.ttf
+        - asset: font/Inter-SemiBold.ttf
+        - asset: font/Inter-Thin.ttf
