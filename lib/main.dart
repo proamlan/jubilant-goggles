@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jubilant/home/home_screen.dart';
 import 'package:jubilant/home/utils/colors.dart';
+import 'package:jubilant/success/payment_success.dart';
 
 import 'checkout/swipe_to_pay.dart';
 
@@ -47,7 +48,7 @@ class TapInvestApp extends StatelessWidget {
             labelSmall: TextStyle(fontSize: 10, color: kSecondaryTextColor)),
         useMaterial3: true,
       ),
-      home: SwipeToPay(),
+      home: PaymentSuccessful(),
     );
   }
 }

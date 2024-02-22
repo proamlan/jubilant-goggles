@@ -11,3 +11,4 @@ const kTableBackgroundColor = Color(0x33D6D3D1);
 const kTagBackgroundColorActive = Color(0xff15803D);
 const kTagBackgroundColorInActive = Color(0xffE7E5E4);
 const kPrimaryButtonColor = Color(0xff16A34A);
+const kAnimationBackgroundColor = Color(0xff15803D);
