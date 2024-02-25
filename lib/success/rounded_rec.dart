@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jubilant/signcontract/sign_contract.dart';
 import 'package:jubilant/success/success_info.dart';
 
 class RoundedRect extends StatefulWidget {
@@ -13,6 +14,7 @@ class _RoundedRectState extends State<RoundedRect>
   late final AnimationController _controller;
   late final Animation<double> _animation;
   var isAnimationOver = false;
+  var isContractSinged = false;
 
   @override
   void initState() {
@@ -24,8 +26,17 @@ class _RoundedRectState extends State<RoundedRect>
     _controller.forward();
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
+        print("Animation completed $status");
         setState(() {
           isAnimationOver = true;
+          Future.delayed(Duration(seconds: 1), () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => SignContractScreen()));
+          }).then((value) => {
+                setState(() {
+                  isContractSinged = true;
+                })
+              });
         });
       }
     });
@@ -39,6 +50,20 @@ class _RoundedRectState extends State<RoundedRect>
 
   @override
   Widget build(BuildContext context) {
+    if (isContractSinged) {
+      return Column(
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Image.asset('images/green_box.png'),
+              Image.asset('images/checkerd_flag.png'),
+            ],
+          ),
+          creteInfoWidget('All Done!', '', 'Redirecting you to the Dashboard.')
+        ],
+      );
+    }
     if (isAnimationOver) {
       return Column(
         children: [
