@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jubilant/home/utils/colors.dart';
 
-
 TextStyle primaryBodyLargeTextStyle(BuildContext context) {
   return Theme.of(context)
       .textTheme
@@ -49,4 +48,11 @@ TextStyle secondaryLabelSmallTextStyle(BuildContext context) {
       .textTheme
       .labelSmall!
       .copyWith(color: kSecondaryTextColor);
+}
+
+TextStyle kSecondaryTextSmall(BuildContext context) {
+  return Theme.of(context)
+      .textTheme
+      .labelSmall!
+      .copyWith(fontSize: 12.0, color: Color(0xff78716C));
 }

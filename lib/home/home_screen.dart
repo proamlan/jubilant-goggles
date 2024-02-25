@@ -88,7 +88,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                //TODO handle Onclick
+                Navigator.pushNamed(context, '/pay');
               },
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(

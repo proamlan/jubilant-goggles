@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_button/flutter_swipe_button.dart';
+import 'package:jubilant/checkout/swipe_app_bar.dart';
 import 'package:jubilant/home/utils/constants.dart';
 import 'package:jubilant/home/views/amout_text_field.dart';
 
-class SwipeToPay extends StatelessWidget {
-  const SwipeToPay({super.key});
+class SwipeToPayScreen extends StatelessWidget {
+  const SwipeToPayScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Swipe to Pay"),
-        ),
+    return SafeArea(
+      child: Scaffold(
         body: Stack(
           children: [
+            SwipeToPayAppBar(),
             Container(
               // Your main content here
               child: Center(
@@ -22,7 +21,7 @@ class SwipeToPay extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('ENTER AMOUNT'),
+                    const Text('ENTER AMOUNT'),
                     Center(
                       child: Padding(
                         padding: const EdgeInsets.all(30.0),
@@ -60,9 +59,9 @@ class SwipeToPay extends StatelessWidget {
                     ),
                     //TODO update with correct colors
                     SwipeButton(
-                      activeTrackColor: Colors.grey,
-                      activeThumbColor: Colors.green,
-                      borderRadius: BorderRadius.zero,
+                      activeTrackColor: Color(0xffE7E5E4),
+                      activeThumbColor: Color(0xff15803D),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
                       height: 60,
                       child: const Text(
                         "SWIPE TO PAY",
@@ -73,6 +72,7 @@ class SwipeToPay extends StatelessWidget {
                       onSwipe: () {
                         print("Swiped");
                         // TODO validate and navigate to next screen
+                        Navigator.pushNamed(context, '/success');
                       },
                     )
                   ],

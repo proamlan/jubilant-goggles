@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:jubilant/checkout/swipe_to_pay.dart';
 import 'package:jubilant/home/home_screen.dart';
 import 'package:jubilant/home/utils/colors.dart';
+import 'package:jubilant/signcontract/sign_contract.dart';
 import 'package:jubilant/success/payment_success.dart';
-
-import 'checkout/swipe_to_pay.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,7 +48,13 @@ class TapInvestApp extends StatelessWidget {
             labelSmall: TextStyle(fontSize: 10, color: kSecondaryTextColor)),
         useMaterial3: true,
       ),
-      home: PaymentSuccessful(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/pay': (context) => SwipeToPayScreen(),
+        '/success': (context) => PaymentSuccessful(),
+        '/sign_contract': (context) => SignContractScreen()
+      },
     );
   }
 }

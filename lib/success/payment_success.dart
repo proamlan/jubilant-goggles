@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jubilant/home/utils/colors.dart';
 import 'package:jubilant/success/rounded_rec.dart';
-import 'package:jubilant/success/success_info.dart';
 import 'package:lottie/lottie.dart';
 
 class PaymentSuccessful extends StatefulWidget {
