@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jubilant/home/utils/colors.dart';
-import 'package:jubilant/success/star_animation.dart';
+import 'package:jubilant/success/rounded_rec.dart';
+import 'package:jubilant/success/success_info.dart';
 import 'package:lottie/lottie.dart';
 
 class PaymentSuccessful extends StatefulWidget {
@@ -12,20 +13,13 @@ class PaymentSuccessful extends StatefulWidget {
 
 class _PaymentSuccessfulState extends State<PaymentSuccessful>
     with TickerProviderStateMixin {
-  late final AnimationController _controller;
-
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this)..reset();
-    _controller.addStatusListener((status) {
-      print(status);
-    });
   }
 
   @override
   void dispose() {
-    _controller.dispose();
     super.dispose();
   }
 
@@ -35,21 +29,33 @@ class _PaymentSuccessfulState extends State<PaymentSuccessful>
       backgroundColor: kAnimationBackgroundColor,
       body: Stack(
         children: [
-          Container(
-            alignment: Alignment.center,
-            child: Lottie.asset(
-              'assets/success_anim.json',
-              controller: _controller,
-              onLoaded: (composition) {
-                // Configure the AnimationController with the duration of the
-                // Lottie file and start the animation.
-                _controller
-                  ..duration = composition.duration
-                  ..forward();
-              },
+          Stack(children: [
+            Image.asset('images/dot_background.png'),
+            Container(
+              alignment: Alignment.center,
+              child: Lottie.asset(
+                'assets/success_anim.json',
+                animate: true,
+                repeat: true,
+              ),
             ),
-          ),
-          Container(color: kAnimationBackgroundColor, child: SuccessAnimation())
+            const Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 100.0,
+                ),
+                Center(
+                  child: RoundedRect(),
+                ),
+                SuccessInfo()
+              ],
+            )
+          ]),
+
+          // Container(color: kAnimationBackgroundColor, child: SuccessAnimation())
         ],
       ),
     );
