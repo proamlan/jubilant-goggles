@@ -5,8 +5,9 @@
 ## Getting Started
 
 ## Screen Recrding
-[screen_recording.mp4](screen_recording.mp4)
 
-[![Video Placeholder](https://example.com/video_placeholder_image.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
-![screenshot.png](screenshot.png)
+
+https://github.com/proamlan/jubilant-goggles/assets/10266655/87363b9d-bcb8-4623-b170-32343efc464d
+
+![screenshot](https://github.com/proamlan/jubilant-goggles/assets/10266655/2787e28f-a8bc-49f5-9dbd-68284799492a)
