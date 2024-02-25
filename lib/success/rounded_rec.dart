@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jubilant/success/success_info.dart';
 
 class RoundedRect extends StatefulWidget {
   const RoundedRect({super.key});
@@ -39,19 +40,46 @@ class _RoundedRectState extends State<RoundedRect>
   @override
   Widget build(BuildContext context) {
     if (isAnimationOver) {
-      return Stack(alignment: Alignment.center, children: [
-        Image.asset('images/green_box.png'),
-        Image.asset('images/book.png'),
-      ]);
+      return Column(
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Image.asset('images/green_box.png'),
+              Image.asset('images/book.png'),
+            ],
+          ),
+          creteInfoWidget('Generating Contract', 'You are almost there!',
+              'Do not leave this page, or press the back button.')
+        ],
+      );
     } else {
-      return Stack(alignment: Alignment.center, children: [
-        Image.asset('images/green_box.png'),
-        RotationTransition(
-          turns: _animation,
-          child: Image.asset('images/star.png'),
-        ),
-        Image.asset('images/tick.png'),
-      ]);
+      return Column(
+        children: [
+          Stack(alignment: Alignment.center, children: [
+            Image.asset('images/green_box.png'),
+            RotationTransition(
+              turns: _animation,
+              child: Image.asset('images/star.png'),
+            ),
+            Image.asset('images/tick.png'),
+          ]),
+          creteInfoWidget(
+            'Payment Done',
+            'You are almost there!',
+            'Do not leave this page, or press the back button.',
+          )
+        ],
+      );
     }
+  }
+
+  Widget creteInfoWidget(
+      String title, String description, String description2) {
+    return SuccessInfo(
+      titleText: title,
+      description: description,
+      description2: description2,
+    );
   }
 }

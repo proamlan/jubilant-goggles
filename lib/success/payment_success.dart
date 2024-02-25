@@ -50,7 +50,6 @@ class _PaymentSuccessfulState extends State<PaymentSuccessful>
                 Center(
                   child: RoundedRect(),
                 ),
-                SuccessInfo()
               ],
             )
           ]),

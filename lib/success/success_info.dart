@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:jubilant/home/utils/text_styles.dart';
 
 class SuccessInfo extends StatefulWidget {
-  const SuccessInfo({super.key});
+  const SuccessInfo(
+      {super.key,
+      required this.titleText,
+      required this.description,
+      required this.description2});
+
+  final String titleText;
+  final String description;
+  final String description2;
 
   @override
   State<SuccessInfo> createState() => _SuccessInfoState();
@@ -15,7 +23,7 @@ class _SuccessInfoState extends State<SuccessInfo> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          "Payment Done",
+          widget.titleText,
           style:
               primaryBodyMediumTextStyle(context).copyWith(color: Colors.white),
         ),
@@ -23,12 +31,12 @@ class _SuccessInfoState extends State<SuccessInfo> {
           height: 20,
         ),
         Text(
-          'You are almost there!',
+          widget.description,
           style: secondPrimaryBodySmallTextStyle(context)
               .copyWith(fontSize: 12.0, color: Colors.white),
         ),
         Text(
-          'Do not leave this page, or press the back button.',
+          widget.description2,
           maxLines: 1,
           style: secondPrimaryBodySmallTextStyle(context).copyWith(
             color: Colors.white,
